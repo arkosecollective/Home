@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const blogEntries = await getCollection('blog');
+	return blogEntries.map(entry => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} | ExploreCOS News`}>
+	<article class="pt-32 pb-24 px-8 bg-black min-h-screen">
+		<div class="max-w-3xl mx-auto">
+			<a href="/blog" class="text-arkose-red font-oswald uppercase tracking-widest text-sm mb-8 inline-flex items-center gap-2 hover:text-white transition-colors">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+				Back to News
+			</a>
+			
+			<header class="mb-12 border-b border-stone-800 pb-8">
+				<div class="flex gap-4 items-center mb-4 text-stone-500 font-oswald text-sm uppercase tracking-widest">
+					<span>{entry.data.date}</span>
+					<span>•</span>
+					<span class="text-arkose-red">{entry.data.category}</span>
+				</div>
+				<h1 class="text-5xl md:text-6xl font-oswald font-bold tracking-tighter uppercase mb-6 text-white">
+					{entry.data.title}
+				</h1>
+				<p class="text-xl text-stone-400 font-light leading-relaxed">
+					{entry.data.description}
+				</p>
+			</header>
+
+			<div class="prose prose-invert prose-stone max-w-none font-inter text-stone-300 leading-loose
+				prose-headings:font-oswald prose-headings:uppercase prose-headings:tracking-tight prose-headings:text-white
+				prose-a:text-arkose-red hover:prose-a:text-red-400
+				prose-strong:text-white
+				prose-blockquote:border-l-arkose-red prose-blockquote:bg-stone-900/50 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:font-light prose-blockquote:not-italic">
+				<Content />
+			</div>
+		</div>
+	</article>
+</Layout>
+
+<style is:global>
+	/* Basic styling for markdown content */
+	.prose h2 { font-size: 2.25rem; margin-top: 3rem; margin-bottom: 1.5rem; color: white; }
+	.prose h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: white; }
+	.prose p { margin-bottom: 1.5rem; }
+	.prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+	.prose li { margin-bottom: 0.5rem; }
+	.prose blockquote { border-left: 4px solid #8b0000; padding-left: 1.5rem; font-style: italic; color: #d6d3d1; margin-bottom: 2rem; }
+</style>
