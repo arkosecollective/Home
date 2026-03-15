@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="2026 Bike Swap | ExploreCOS">
+	<!-- Hero Section -->
+	<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+		<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541625602330-2277a4c4b28d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-40"></div>
+		<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black"></div>
+		
+		<div class="relative z-10 text-center px-4 max-w-5xl">
+			<span class="text-arkose-red font-oswald uppercase tracking-[0.4em] text-sm mb-6 block">Presented by Arkose Collective</span>
+			<h1 class="text-6xl md:text-9xl font-oswald font-bold tracking-tighter uppercase mb-6 leading-none">
+				Colorado Springs <br/>
+				<span class="text-arkose-red">Bike Swap</span>
+			</h1>
+			<div class="flex flex-col md:flex-row gap-8 justify-center items-center mt-12 font-oswald text-xl uppercase tracking-widest text-stone-300">
+				<div class="flex items-center gap-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-arkose-red"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+					May 9, 2026
+				</div>
+				<div class="hidden md:block w-1 h-1 bg-stone-700 rounded-full"></div>
+				<div class="flex items-center gap-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-arkose-red"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+					10:00 AM – 2:00 PM
+				</div>
+				<div class="hidden md:block w-1 h-1 bg-stone-700 rounded-full"></div>
+				<div class="flex items-center gap-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-arkose-red"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+					Soccerhaus, List Dr
+				</div>
+			</div>
+			
+			<div class="mt-16">
+				<a href="https://www.cosbikeswap.net/" target="_blank" class="bg-white text-black font-oswald uppercase tracking-widest px-12 py-5 hover:bg-arkose-red hover:text-white transition-all duration-300 inline-block shadow-2xl">
+					Register as a Vendor
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section class="py-24 px-8 bg-black">
+		<div class="max-w-4xl mx-auto text-center">
+			<h2 class="text-4xl md:text-6xl font-oswald font-bold uppercase tracking-tighter mb-8">The Bedrock of <span class="text-arkose-red">Community Commerce</span></h2>
+			<p class="text-xl text-stone-400 font-light leading-relaxed">
+				The Colorado Springs Bike Swap is the region’s premier marketplace for cyclists to connect, trade, and gear up for the season. Managed by Arkose Collective, we provide the foundational infrastructure for a professionalized, high-impact swap meet that serves as the bedrock for cycling’s local growth.
+			</p>
+		</div>
+	</section>
+
+	<!-- Vendor Tiers -->
+	<section class="py-24 px-8 bg-stone-950 border-y border-stone-900">
+		<div class="max-w-7xl mx-auto">
+			<div class="mb-16 text-center">
+				<span class="text-arkose-red font-oswald uppercase tracking-widest text-xs mb-2 block">Choose Your Presence</span>
+				<h2 class="text-5xl font-oswald font-bold uppercase tracking-tighter">Vendor <span class="text-arkose-red">Tiers</span></h2>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- Individual -->
+				<div class="bg-black border border-stone-800 p-8 flex flex-col justify-between group hover:border-arkose-red transition-all duration-500">
+					<div>
+						<h3 class="font-oswald text-2xl font-bold uppercase mb-2">Individual Vendor</h3>
+						<p class="text-stone-500 text-sm mb-6">Perfect for riders clearing out the garage.</p>
+						<div class="text-4xl font-bold text-white mb-8">$25 <span class="text-xs text-stone-600 uppercase">/ 10x10 Space</span></div>
+						<ul class="space-y-3 text-sm text-stone-400 font-inter">
+							<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-arkose-red"><polyline points="20 6 9 17 4 12"></polyline></svg> Non-Reserved 10x10</li>
+							<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-arkose-red"><polyline points="20 6 9 17 4 12"></polyline></svg> Personal Gear Only</li>
+						</ul>
+					</div>
+					<a href="https://www.cosbikeswap.net/individual" class="mt-10 block text-center py-3 border border-stone-800 font-oswald uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-colors">Book Space</a>
+				</div>
+
+				<!-- Deluxe / Non-Profit -->
+				<div class="bg-black border border-stone-800 p-8 flex flex-col justify-between group hover:border-arkose-red transition-all duration-500 relative">
+					<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-arkose-red text-white text-[10px] font-oswald uppercase tracking-widest px-4 py-1">Popular Choice</div>
+					<div>
+						<h3 class="font-oswald text-2xl font-bold uppercase mb-2">Business Vendor</h3>
+						<p class="text-stone-500 text-sm mb-6">Elevate your brand with the community.</p>
+						<div class="text-4xl font-bold text-white mb-8">$90 <span class="text-xs text-stone-600 uppercase">/ 10x20 Space</span></div>
+						<ul class="space-y-3 text-sm text-stone-400 font-inter">
+							<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-arkose-red"><polyline points="20 6 9 17 4 12"></polyline></svg> Non-Reserved 10x20</li>
+							<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-arkose-red"><polyline points="20 6 9 17 4 12"></polyline></svg> Commercial Sales Allowed</li>
+						</ul>
+					</div>
+					<a href="https://www.cosbikeswap.net/business" class="mt-10 block text-center py-3 bg-white text-black font-oswald uppercase tracking-widest text-xs hover:bg-arkose-red hover:text-white transition-colors">Book Space</a>
+				</div>
+
+				<!-- Deluxe Business -->
+				<div class="bg-black border border-stone-800 p-8 flex flex-col justify-between group hover:border-arkose-red transition-all duration-500">
+					<div>
+						<h3 class="font-oswald text-2xl font-bold uppercase mb-2">Reserved Business</h3>
+						<p class="text-stone-500 text-sm mb-6">Full turn-key professional setup.</p>
+						<div class="text-4xl font-bold text-white mb-8">$120 <span class="text-xs text-stone-600 uppercase">/ Premium Spot</span></div>
+						<ul class="space-y-3 text-sm text-stone-400 font-inter">
+							<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-arkose-red"><polyline points="20 6 9 17 4 12"></polyline></svg> Reserved 10x20 Spot</li>
+							<li class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-arkose-red"><polyline points="20 6 9 17 4 12"></polyline></svg> Table & Chairs Included</li>
+						</ul>
+					</div>
+					<a href="https://www.cosbikeswap.net/business-reserved" class="mt-10 block text-center py-3 border border-stone-800 font-oswald uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-colors">Book Space</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- How It Works & Bike Corral -->
+	<section class="py-24 px-8 bg-black">
+		<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+			<div>
+				<h3 class="text-3xl font-oswald font-bold uppercase mb-6 tracking-tight">How it <span class="text-arkose-red">Works</span></h3>
+				<div class="space-y-8 text-stone-400 font-inter">
+					<div class="flex gap-6">
+						<div class="text-4xl font-oswald font-bold text-stone-800">01</div>
+						<div>
+							<h4 class="text-white font-oswald uppercase mb-2 tracking-widest">Reserve Your Spot</h4>
+							<p class="text-sm">Choose from individual or business tiers. Every booth purchase helps us sustain the event’s professional infrastructure.</p>
+						</div>
+					</div>
+					<div class="flex gap-6">
+						<div class="text-4xl font-oswald font-bold text-stone-800">02</div>
+						<div>
+							<h4 class="text-white font-oswald uppercase mb-2 tracking-widest">Load in at Soccerhaus</h4>
+							<p class="text-sm">Vendors arrive early for setup. We provide the venue, the crowd, and the vibe. You bring the gear.</p>
+						</div>
+					</div>
+					<div class="flex gap-6">
+						<div class="text-4xl font-oswald font-bold text-stone-800">03</div>
+						<div>
+							<h4 class="text-white font-oswald uppercase mb-2 tracking-widest">Trade & Connect</h4>
+							<p class="text-sm">Engage with thousands of local cyclists. Sell your old components or launch your new brand directly to the core of the Pikes Peak scene.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-stone-900 border border-stone-800 p-12 flex flex-col justify-center">
+				<div class="bg-arkose-red/10 border-l-4 border-arkose-red p-6 mb-8">
+					<h3 class="text-2xl font-oswald font-bold uppercase mb-2">The <span class="text-arkose-red">Bike Corral</span></h3>
+					<p class="text-stone-400 text-sm italic">"The fastest way to sell a single bike."</p>
+				</div>
+				<p class="text-stone-300 mb-8 leading-relaxed">
+					Don't need a full booth? The Bike Corral allows you to place a single bike in our high-traffic showcase area for a flat fee. We provide the tag, you set the price.
+				</p>
+				<div class="text-4xl font-bold mb-8">$15 <span class="text-xs text-stone-600 uppercase">/ Per Bike</span></div>
+				<a href="https://www.cosbikeswap.net/bike-corral" class="text-arkose-red font-oswald uppercase tracking-widest text-sm hover:text-white transition-colors flex items-center gap-2">
+					Register Your Bike
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>
