@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const weeklyEvents = [
+	{ day: 'Monday', time: '5:45 PM', name: 'Sunset Ride: Bike the Garden', description: 'A weekly sunset cruise through the iconic Garden of the Gods. Meet at the Lodge.' },
+	{ day: 'Tuesday', time: '6:00 PM', name: 'Yoga for Cyclists', description: 'Recovery-focused yoga session to keep you supple for the Pikes Peak climbs.' },
+	{ day: 'Wednesday', time: '7:00 PM', name: 'Acoustic at the Lodge', description: 'Mid-week live music and happy hour at the Watering Hole.' },
+	{ day: 'Saturday', time: '10:00 AM', name: 'Buffalo Lodge Bike Tribe Ride', description: 'Year-round, no-drop group road ride. 16-24 miles of local Pikes Peak beauty.' },
+	{ day: 'Sunday', time: '3:00 PM', name: 'Bluegrass & Brews', description: 'The perfect post-ride Sunday tradition. Live bluegrass jam session.' }
+];
+
+const amenities = [
+	{ icon: '🚲', title: 'Bike Services', desc: 'On-site bike wash, secure storage, and basic repair tools for all guests.' },
+	{ icon: '🍺', title: 'The Watering Hole', desc: 'A dedicated cyclist lounge and bar with happy hour pricing for Tribe members.' },
+	{ icon: '🗺️', title: 'Trailhead Access', desc: 'Located directly on the Midland Trail with immediate access to Garden of the Gods.' },
+	{ icon: '🧇', title: 'Post-Ride Fuel', desc: 'Complimentary waffles and coffee to fuel your next Colorado Springs epic.' }
+];
+---
+
+<Layout title="Buffalo Lodge Bicycle Resort | ExploreCOS">
+	<!-- Cinematic Hero -->
+	<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+		<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511994298241-608e28f14fde?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-50"></div>
+		<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+		
+		<div class="relative z-10 text-center px-4 max-w-5xl">
+			<span class="text-arkose-red font-oswald uppercase tracking-[0.4em] text-sm mb-6 block">ExploreCOS Partner Spotlight</span>
+			<h1 class="text-6xl md:text-9xl font-oswald font-bold tracking-tighter uppercase mb-6 leading-none">
+				Buffalo <span class="text-arkose-red">Lodge</span>
+			</h1>
+			<p class="text-xl md:text-2xl text-stone-300 font-light tracking-widest uppercase mb-12">The Base Camp for Adventure</p>
+			
+			<div class="flex flex-col md:flex-row gap-6 justify-center mt-12">
+				<a href="#events" class="bg-white text-black font-oswald uppercase tracking-widest px-10 py-4 hover:bg-arkose-red hover:text-white transition-all duration-300">
+					Weekly Events
+				</a>
+				<a href="https://skibikelodge.com/" target="_blank" class="border border-white/30 backdrop-blur-sm text-white font-oswald uppercase tracking-widest px-10 py-4 hover:bg-white hover:text-black transition-all duration-300">
+					Book Your Stay
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- The Connection Section -->
+	<section class="py-24 px-8 bg-black">
+		<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+			<div>
+				<h2 class="text-5xl font-oswald font-bold uppercase tracking-tighter mb-8 leading-tight text-white">
+					The Bedrock of <br/><span class="text-arkose-red">Westside Cycling</span>
+				</h2>
+				<p class="text-stone-400 text-lg leading-relaxed mb-10">
+					The Buffalo Lodge Bicycle Resort isn't just a place to sleep—it's the epicenter of the Pikes Peak cycling community. Located at the foot of Garden of the Gods and directly on the Midland Trail, it serves as a critical node in our regional outdoor economy.
+				</p>
+				<div class="grid grid-cols-2 gap-8">
+					<div class="border-l-2 border-arkose-red pl-6">
+						<h4 class="font-oswald text-white uppercase text-sm mb-1">Trail Proximity</h4>
+						<p class="text-stone-500 text-xs uppercase tracking-widest">0.1 Miles to Midland</p>
+					</div>
+					<div class="border-l-2 border-stone-800 pl-6">
+						<h4 class="font-oswald text-white uppercase text-sm mb-1">Community Home</h4>
+						<p class="text-stone-500 text-xs uppercase tracking-widest">Host of the Bike Tribe</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="grid grid-cols-1 gap-4">
+				{amenities.map(item => (
+					<div class="bg-stone-900/40 border border-stone-800 p-6 hover:border-arkose-red transition-colors group">
+						<div class="flex gap-6 items-start">
+							<div class="text-3xl grayscale group-hover:grayscale-0 transition-all">{item.icon}</div>
+							<div>
+								<h4 class="font-oswald text-white uppercase tracking-wider mb-1">{item.title}</h4>
+								<p class="text-stone-500 text-sm font-light leading-snug">{item.desc}</p>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Weekly Events Feed -->
+	<section id="events" class="py-24 px-8 bg-stone-950 border-t border-stone-900">
+		<div class="max-w-4xl mx-auto">
+			<div class="text-center mb-16">
+				<h2 class="text-5xl font-oswald font-bold uppercase tracking-tighter mb-4 text-white">Weekly <span class="text-arkose-red">Events</span></h2>
+				<p class="text-stone-500 font-oswald uppercase tracking-widest text-xs">Join the Buffalo Lodge Bike Tribe</p>
+			</div>
+
+			<div class="space-y-4">
+				{weeklyEvents.map(event => (
+					<div class="bg-black border border-stone-800 p-8 flex flex-col md:flex-row justify-between items-center hover:bg-stone-900 transition-colors">
+						<div class="flex flex-col md:flex-row gap-8 items-center text-center md:text-left">
+							<div class="w-32">
+								<span class="text-arkose-red font-oswald font-bold uppercase tracking-tighter text-xl">{event.day}</span>
+								<p class="text-stone-500 text-xs uppercase tracking-widest">{event.time}</p>
+							</div>
+							<div>
+								<h4 class="font-oswald text-white text-2xl font-bold uppercase tracking-tight">{event.name}</h4>
+								<p class="text-stone-400 text-sm font-light max-w-md">{event.description}</p>
+							</div>
+						</div>
+						<div class="mt-6 md:mt-0">
+							<span class="text-[10px] border border-stone-800 px-3 py-1 text-stone-500 uppercase tracking-widest">Bike Tribe Community</span>
+						</div>
+					</div>
+				))}
+			</div>
+			
+			<div class="mt-16 bg-arkose-red/5 border border-arkose-red/20 p-10 text-center">
+				<h3 class="font-oswald text-2xl font-bold uppercase mb-4 text-white">Become a Tribe Member</h3>
+				<p class="text-stone-400 text-sm mb-8 max-w-lg mx-auto italic">Join the community for $25/year. Includes weekly rides, permanent happy hour pricing at the Watering Hole, and custom Buffalo Lodge gear.</p>
+				<a href="https://skibikelodge.com/bike-tribe/" target="_blank" class="inline-block bg-arkose-red text-white font-oswald uppercase tracking-widest px-10 py-3 hover:bg-white hover:text-black transition-all">
+					Join the Tribe
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>
