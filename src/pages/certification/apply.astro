@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Apply for BTT Certification | Arkose Collective">
+	<section class="pt-48 pb-24 px-8 bg-black min-h-screen">
+		<div class="max-w-3xl mx-auto">
+			<div class="mb-16">
+				<h1 class="text-5xl font-oswald font-bold uppercase tracking-tighter mb-4">
+					BTT <span class="text-arkose-red">Application</span>
+				</h1>
+				<p class="text-stone-400 font-inter font-light text-lg">
+					Start your journey from the boardroom to the bedrock. Provide your corporate details below to begin the certification process.
+				</p>
+			</div>
+
+			<form class="space-y-8 bg-stone-900/20 border border-stone-800 p-10">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div class="space-y-2">
+						<label class="block font-oswald uppercase tracking-widest text-xs text-stone-500">Company Name</label>
+						<input type="text" class="w-full bg-black border border-stone-800 py-3 px-4 text-white focus:border-arkose-red outline-none transition-colors" placeholder="e.g. Arkose Industries" />
+					</div>
+					<div class="space-y-2">
+						<label class="block font-oswald uppercase tracking-widest text-xs text-stone-500">Industry</label>
+						<input type="text" class="w-full bg-black border border-stone-800 py-3 px-4 text-white focus:border-arkose-red outline-none transition-colors" placeholder="e.g. Technology" />
+					</div>
+				</div>
+
+				<div class="space-y-2">
+					<label class="block font-oswald uppercase tracking-widest text-xs text-stone-500">Office Address</label>
+					<input type="text" class="w-full bg-black border border-stone-800 py-3 px-4 text-white focus:border-arkose-red outline-none transition-colors" placeholder="Street Address, City, State, ZIP" />
+					<p class="text-[10px] text-stone-600 uppercase tracking-widest mt-1">Used to calculate proximity score to trailheads.</p>
+				</div>
+
+				<div class="space-y-2">
+					<label class="block font-oswald uppercase tracking-widest text-xs text-stone-500">Non-Profit Partner</label>
+					<select class="w-full bg-black border border-stone-800 py-3 px-4 text-white focus:border-arkose-red outline-none transition-colors appearance-none">
+						<option>Medicine Wheel Trail Advocates</option>
+						<option>Trails and Open Space Coalition (TOSC)</option>
+						<option>Rocky Mountain Field Institute</option>
+						<option>Other / New Partner</option>
+					</select>
+				</div>
+
+				<div class="space-y-2">
+					<label class="block font-oswald uppercase tracking-widest text-xs text-stone-500">Briefly describe your employee engagement policy</label>
+					<textarea class="w-full bg-black border border-stone-800 py-3 px-4 text-white focus:border-arkose-red outline-none transition-colors h-32" placeholder="e.g. We offer paid time off for trail work days..."></textarea>
+				</div>
+
+				<button type="submit" class="w-full bg-arkose-red text-white font-oswald uppercase tracking-widest py-5 hover:bg-white hover:text-black transition-all">
+					Submit Lead for Review
+				</button>
+			</form>
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "btt-001",
+    "company_name": "Pikes Peak Tech Solutions",
+    "industry": "Software Development",
+    "location_score": 9.5,
+    "non_profit_partner": "Medicine Wheel Trail Advocates",
+    "employee_engagement_policy": "Weekly 'Lunch Laps' & Friday Trail Volunteer Hours",
+    "website": "https://example.com/pikes-peak-tech"
+  },
+  {
+    "id": "btt-002",
+    "company_name": "Mountain Vista Law",
+    "industry": "Legal Services",
+    "location_score": 8.0,
+    "non_profit_partner": "Trails and Open Space Coalition",
+    "employee_engagement_policy": "Bicycle Commuter Incentives & Annual Trail Cleanup Day",
+    "website": "https://example.com/mountain-vista-law"
+  }
+]

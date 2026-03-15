@@ -23,15 +23,15 @@ const { title } = Astro.props;
 	</head>
 	<body class="bg-black text-white selection:bg-arkose-red selection:text-white overflow-x-hidden">
 		<header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 px-8 flex justify-between items-center group">
-			<div class="logo font-oswald text-2xl font-bold tracking-tighter uppercase">
+			<a href="/" class="logo font-oswald text-2xl font-bold tracking-tighter uppercase group-hover:text-white transition-colors">
 				Explore<span class="text-arkose-red">COS</span>
-			</div>
+			</a>
 			
 			<nav class="hidden md:flex gap-10 font-oswald text-sm tracking-widest uppercase">
-				<a href="/bike-swap" class="hover:text-arkose-red transition-colors">Bike Swap</a>
-				<a href="/buffalo-lodge" class="hover:text-arkose-red transition-colors">Buffalo Lodge</a>
-				<a href="/ring-the-peak" class="hover:text-arkose-red transition-colors">Ring the Peak</a>
 				<a href="/trails" class="hover:text-arkose-red transition-colors">Adventure Planner</a>
+				<a href="/certification/overview" class="hover:text-arkose-red transition-colors">BTT Certification</a>
+				<a href="/ring-the-peak" class="hover:text-arkose-red transition-colors">Ring the Peak</a>
+				<a href="/bike-swap" class="hover:text-arkose-red transition-colors">Bike Swap</a>
 				<a href="/blog" class="hover:text-arkose-red transition-colors">Blog</a>
 				<a href="/bike-swap" class="bg-arkose-red text-white px-5 py-2 hover:bg-white hover:text-black transition-all duration-300">Register</a>
 			</nav>
@@ -56,10 +56,10 @@ const { title } = Astro.props;
 				<div>
 					<h3 class="text-lg mb-4 text-stone-300">Quick Links</h3>
 					<ul class="text-sm text-stone-500 space-y-2">
-						<li><a href="/bike-swap" class="hover:text-white transition-colors">2026 Bike Swap</a></li>
-						<li><a href="/buffalo-lodge" class="hover:text-white transition-colors">Buffalo Lodge Resort</a></li>
-						<li><a href="/ring-the-peak" class="hover:text-white transition-colors">Ring the Peak Overview</a></li>
 						<li><a href="/trails" class="hover:text-white transition-colors">Adventure Planner</a></li>
+						<li><a href="/certification/overview" class="hover:text-white transition-colors">BTT Certification</a></li>
+						<li><a href="/ring-the-peak" class="hover:text-white transition-colors">Ring the Peak Overview</a></li>
+						<li><a href="/bike-swap" class="hover:text-white transition-colors">2026 Bike Swap</a></li>
 						<li><a href="/blog" class="hover:text-white transition-colors">Development News</a></li>
 					</ul>
 				</div>

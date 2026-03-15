@@ -1,0 +1,91 @@
+---
+---
+
+<div class="bg-stone-900/30 border border-stone-800 p-8 mb-12">
+	<div class="max-w-3xl">
+		<h2 class="text-2xl font-oswald font-bold tracking-tighter uppercase mb-8">Tell us what you're looking for, and we'll suggest the <span class="text-arkose-red">perfect</span> Pikes Peak pairing.</h2>
+		
+		<form id="suggestion-form" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+			<div>
+				<label class="block font-oswald uppercase tracking-wider text-[10px] text-stone-600 mb-2">What do you want to do?</label>
+				<select id="activity-select" class="w-full bg-stone-950 border border-stone-800 text-white py-3 px-4 font-inter text-sm focus:border-arkose-red outline-none transition-colors">
+					<option value="all">Surprise Me</option>
+					<option value="chill">Chill Flow & Brews</option>
+					<option value="technical">Technical Grit & Slabs</option>
+					<option value="epic">High Alpine Epics</option>
+					<option value="carless">No-Car Connectivity</option>
+				</select>
+			</div>
+			
+			<div>
+				<label class="block font-oswald uppercase tracking-wider text-[10px] text-stone-600 mb-2">Intensity Level</label>
+				<select id="intensity-select" class="w-full bg-stone-950 border border-stone-800 text-white py-3 px-4 font-inter text-sm focus:border-arkose-red outline-none transition-colors">
+					<option value="any">Any Intensity</option>
+					<option value="green">Entry Level (Green)</option>
+					<option value="blue">Standard (Blue)</option>
+					<option value="black">Expert (Black)</option>
+				</select>
+			</div>
+
+			<button type="submit" class="bg-arkose-red text-white font-oswald uppercase tracking-widest text-xs py-4 hover:bg-white hover:text-black transition-all duration-300">
+				Get Suggestions
+			</button>
+		</form>
+
+		<div id="suggestion-result" class="mt-8 hidden animate-fade-in">
+			<div class="p-4 bg-arkose-red/10 border border-arkose-red/20 flex gap-4 items-center">
+				<div class="text-arkose-red">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
+				</div>
+				<div>
+					<p class="text-xs font-oswald uppercase tracking-widest text-stone-500">Our Recommendation</p>
+					<p id="recommendation-text" class="text-white font-bold"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	const form = document.getElementById('suggestion-form');
+	const result = document.getElementById('suggestion-result');
+	const recText = document.getElementById('recommendation-text');
+
+	const suggestions = {
+		'chill-any': "The Chutes + Cerberus Brewing (High speed, low stress)",
+		'chill-green': "Red Rock Canyon Loop + Trails End Taproom",
+		'technical-black': "Templeton + Goat Patch Brewing (The local masterclass)",
+		'technical-blue': "Captain Jack's + Manitou Brewing Co",
+		'epic-black': "Manitou to No Name Creek + Manitou Brewing Co",
+		'epic-blue': "Rampart Reservoir Loop + Paradox Beer Co",
+		'carless-any': "Daniels Pass + Bristol Brewing (Ivywild connectivity)",
+		'all-any': "Captain Jack's — The gold standard of COS grit."
+	};
+
+	form?.addEventListener('submit', (e) => {
+		e.preventDefault();
+		const activity = (document.getElementById('activity-select') as HTMLSelectElement).value;
+		const intensity = (document.getElementById('intensity-select') as HTMLSelectElement).value;
+		
+		let key = `${activity}-${intensity}`;
+		if (!suggestions[key]) {
+			key = `${activity}-any`;
+		}
+		if (!suggestions[key]) {
+			key = `all-any`;
+		}
+
+		if (recText) recText.textContent = suggestions[key];
+		result?.classList.remove('hidden');
+	});
+</script>
+
+<style>
+	@keyframes fade-in {
+		from { opacity: 0; transform: translateY(10px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+	.animate-fade-in {
+		animation: fade-in 0.5s ease-out forwards;
+	}
+</style>

@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BTTBadge from '../../components/BTTBadge.astro';
+---
+
+<Layout title="Boardroom to Trails | Arkose Collective">
+	<!-- Hero Section -->
+	<section class="relative pt-48 pb-24 px-8 bg-black overflow-hidden">
+		<!-- High-impact CSS Grid Placeholders -->
+		<div class="max-w-7xl mx-auto">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+				<div class="relative z-10">
+					<span class="text-arkose-red font-oswald uppercase tracking-widest text-sm mb-6 block">B2B Corporate Engagement</span>
+					<h1 class="text-5xl md:text-7xl font-oswald font-bold tracking-tighter uppercase mb-8 leading-tight">
+						From the <span class="text-stone-400">Boardroom</span> to the <span class="text-arkose-red">Bedrock.</span>
+					</h1>
+					<p class="text-xl md:text-2xl text-stone-300 font-light mb-10 max-w-xl italic">
+						Is your company BTT Certified?
+					</p>
+					<div class="flex gap-6">
+						<a href="/certification/apply" class="bg-white text-black font-oswald uppercase tracking-widest px-10 py-4 hover:bg-arkose-red hover:text-white transition-all duration-300">
+							Apply Now
+						</a>
+						<a href="/certification/directory" class="border border-stone-800 text-stone-400 font-oswald uppercase tracking-widest px-10 py-4 hover:bg-stone-900 hover:text-white transition-all duration-300">
+							Certified Directory
+						</a>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-[500px]">
+					<!-- Left: Boardroom Placeholder -->
+					<div class="bg-stone-900 border border-stone-800 relative overflow-hidden group">
+						<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-50 group-hover:grayscale-0 transition-all duration-700"></div>
+						<div class="absolute inset-0 bg-black/40"></div>
+						<div class="absolute bottom-6 left-6 z-10">
+							<span class="text-[10px] font-oswald uppercase tracking-widest text-arkose-red">Corporate Foundations</span>
+						</div>
+					</div>
+					<!-- Right: Rider Placeholder -->
+					<div class="bg-stone-900 border border-stone-800 relative overflow-hidden group">
+						<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576858597341-c1161245037d?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-50 group-hover:grayscale-0 transition-all duration-700"></div>
+						<div class="absolute inset-0 bg-black/40"></div>
+						<div class="absolute bottom-6 left-6 z-10 text-right w-full pr-12">
+							<span class="text-[10px] font-oswald uppercase tracking-widest text-arkose-red">Regional Connectivity</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 1: The New CSR Standard -->
+	<section class="py-24 px-8 bg-stone-950 border-y border-stone-900">
+		<div class="max-w-4xl mx-auto text-center">
+			<BTTBadge size="lg" className="mx-auto mb-12" />
+			<h2 class="text-4xl md:text-5xl font-oswald font-bold uppercase tracking-tight mb-8">The New <span class="text-arkose-red">CSR</span> Standard</h2>
+			<p class="text-stone-400 text-lg md:text-xl leading-relaxed font-inter font-light">
+				The Pikes Peak outdoor economy is the parent rock of our region's prosperity. The **Boardroom to Trails (BTT)** certification by Arkose Collective recognizes companies that treat our trail network not just as an amenity, but as a foundational business asset. We certify the businesses that invest in the physical health of our community and the economic future of our region.
+			</p>
+		</div>
+	</section>
+
+	<!-- Section 2: Certification Criteria (The "Grit") -->
+	<section class="py-24 px-8 bg-black">
+		<div class="max-w-7xl mx-auto">
+			<h2 class="text-3xl font-oswald font-bold uppercase tracking-widest mb-16 border-l-4 border-arkose-red pl-8">Certification Criteria <span class="text-stone-600 block text-lg font-light tracking-normal mt-2">The "Grit"</span></h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+				<div class="bg-stone-900/30 border border-stone-800 p-10 hover:border-stone-600 transition-colors">
+					<span class="text-arkose-red font-oswald text-5xl font-bold mb-6 block opacity-20">01</span>
+					<h4 class="text-xl font-oswald font-bold uppercase mb-4 tracking-wider">Foundational Proximity</h4>
+					<p class="text-stone-500 text-sm leading-relaxed">Your primary office must be located within 2 miles (3.2km) of an official open space trailhead.</p>
+				</div>
+				<div class="bg-stone-900/30 border border-stone-800 p-10 hover:border-stone-600 transition-colors">
+					<span class="text-arkose-red font-oswald text-5xl font-bold mb-6 block opacity-20">02</span>
+					<h4 class="text-xl font-oswald font-bold uppercase mb-4 tracking-wider">Bedrock Support</h4>
+					<p class="text-stone-500 text-sm leading-relaxed">Demonstrated financial or in-kind support for a local outdoor recreation non-profit (e.g., Medicine Wheel, TOSC).</p>
+				</div>
+				<div class="bg-stone-900/30 border border-stone-800 p-10 hover:border-stone-600 transition-colors">
+					<span class="text-arkose-red font-oswald text-5xl font-bold mb-6 block opacity-20">03</span>
+					<h4 class="text-xl font-oswald font-bold uppercase mb-4 tracking-wider">Trail Engagement</h4>
+					<p class="text-stone-500 text-sm leading-relaxed">Proof of company-wide policies that encourage employee engagement on the trails (e.g., "Lunch Laps", Commuter incentives).</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 3: Benefits -->
+	<section class="py-24 px-8 bg-stone-900/10">
+		<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+			<div>
+				<h2 class="text-4xl font-oswald font-bold uppercase mb-8">Benefits of <span class="text-arkose-red">Certification</span></h2>
+				<ul class="space-y-6">
+					<li class="flex gap-4">
+						<span class="text-arkose-red mt-1 font-bold">✓</span>
+						<div>
+							<strong class="text-white block font-oswald uppercase text-lg mb-1">Attraction & Retention</strong>
+							<p class="text-stone-500 text-sm font-light">Prove to modern talent that your corporate culture values outdoor wellness and community bedrock.</p>
+						</div>
+					</li>
+					<li class="flex gap-4">
+						<span class="text-arkose-red mt-1 font-bold">✓</span>
+						<div>
+							<strong class="text-white block font-oswald uppercase text-lg mb-1">Regional Authority</strong>
+							<p class="text-stone-500 text-sm font-light">Join an elite directory of Pikes Peak leaders invested in the region's sustainable growth.</p>
+						</div>
+					</li>
+					<li class="flex gap-4">
+						<span class="text-arkose-red mt-1 font-bold">✓</span>
+						<div>
+							<strong class="text-white block font-oswald uppercase text-lg mb-1">The BTT Badge</strong>
+							<p class="text-stone-500 text-sm font-light">The exclusive right to display the "Boardroom to Trails" digital badge on your corporate materials.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="bg-black border border-stone-800 p-12 text-center">
+				<BTTBadge size="lg" className="mx-auto mb-8" />
+				<h3 class="text-2xl font-oswald font-bold uppercase mb-4 italic text-stone-300">Certified Leadership</h3>
+				<a href="/certification/apply" class="inline-block bg-arkose-red text-white font-oswald uppercase tracking-widest px-12 py-4 hover:bg-white hover:text-black transition-all">
+					Start Application
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

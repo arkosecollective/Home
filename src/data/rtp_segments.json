@@ -1,0 +1,46 @@
+[
+  {
+    "id": "rtp-1",
+    "name": "Manitou to No Name Creek",
+    "distance_miles": 8.5,
+    "elevation_gain_ft": 2400,
+    "difficulty": "Black/Technical",
+    "aesthetic": "Pikes Peak Cog Railway Views",
+    "connectivity": "Direct from Manitou Springs",
+    "partner_brewery": "Manitou Brewing Co",
+    "photo_op": "The Iron Mountain Overlook"
+  },
+  {
+    "id": "rtp-2",
+    "name": "The Crags to Putney Gulch",
+    "distance_miles": 6.2,
+    "elevation_gain_ft": 1100,
+    "difficulty": "Blue/Flow",
+    "aesthetic": "High Alpine Meadows",
+    "connectivity": "Shuttle Accessible",
+    "partner_brewery": "Paradox Beer Co (Divide)",
+    "photo_op": "The Crags Rock Formations"
+  },
+  {
+    "id": "rtp-3",
+    "name": "Pancake Rocks to Horsethief",
+    "distance_miles": 7.8,
+    "elevation_gain_ft": 1800,
+    "difficulty": "Black/Technical",
+    "aesthetic": "Ancient Bristlecone Pines",
+    "connectivity": "Remote",
+    "partner_brewery": "Cerberus Brewing (Post-Ride)",
+    "photo_op": "The Pancake Rock Slabs"
+  },
+  {
+    "id": "rtp-4",
+    "name": "Jones Park to Captain Jack's",
+    "distance_miles": 10.4,
+    "elevation_gain_ft": 900,
+    "difficulty": "Blue/Flow",
+    "aesthetic": "Decomposed Granite (Screen)",
+    "connectivity": "High - Joins City Trail System",
+    "partner_brewery": "Trails End Taproom",
+    "photo_op": "The Chutes High-Banked Turns"
+  }
+]

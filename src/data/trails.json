@@ -1,6 +1,82 @@
 [
-  { "id": "rtp-01", "name": "Manitou to Barr Trail", "difficulty": "Black", "type": "Multi-use", "elevation_gain": 2200, "rtp_segment": true, "connectivity_score": 9, "photo_ops": ["Incline View", "Barr Camp"] },
-  { "id": "rtp-02", "name": "Section 16 to Bear Creek", "difficulty": "Blue", "type": "Multi-use", "elevation_gain": 1200, "rtp_segment": true, "connectivity_score": 8, "photo_ops": ["Palmer Reservoir", "City View"] },
-  { "id": "trail-01", "name": "Red Rock Canyon Loop", "difficulty": "Green", "type": "Multi-use", "elevation_gain": 450, "rtp_segment": false, "connectivity_score": 10, "photo_ops": ["Sandstone Canyons"] },
-  { "id": "trail-02", "name": "Ute Valley Epic", "difficulty": "Blue", "type": "MTB Primary", "elevation_gain": 600, "rtp_segment": false, "connectivity_score": 7, "photo_ops": ["Rock Tech Sections"] }
+  {
+    "id": "cos-001",
+    "name": "Captain Jack's (Cheyenne Cañon)",
+    "difficulty": "Blue/Flow",
+    "soil_type": "Pikes Peak Screen (Loose Decomposed Granite)",
+    "fun_index": 10,
+    "last_verified": "2026-03-15",
+    "description": "The gold standard of COS grit. High-speed flow on a unique, 'floaty' granite surface.",
+    "partner_brewery": "Manitou Brewing Co"
+  },
+  {
+    "id": "cos-004",
+    "name": "The Chutes (Stratton Open Space)",
+    "difficulty": "Blue/Flow",
+    "soil_type": "Buffed Granite Screen",
+    "fun_index": 10,
+    "last_verified": "2026-03-15",
+    "description": "Bicycle-only downhill bobsled run. Banked turns, massive flow, and pure adrenaline.",
+    "partner_brewery": "Cerberus Brewing"
+  },
+  {
+    "id": "cos-002",
+    "name": "Templeton (Palmer Park)",
+    "difficulty": "Black/Technical",
+    "soil_type": "Sandstone & Technical Bedrock",
+    "fun_index": 9.5,
+    "last_verified": "2026-03-15",
+    "description": "A brutal, beautiful technical masterclass in the heart of the city bluffs.",
+    "partner_brewery": "Goat Patch Brewing"
+  },
+  {
+    "id": "cos-rim-bluffs",
+    "name": "Rim Trail (Austin Bluffs)",
+    "difficulty": "Blue/Technical",
+    "soil_type": "White Arkose Sandstone & Sandy Loam",
+    "fun_index": 9,
+    "last_verified": "2026-03-15",
+    "description": "A surreal ride through white sandstone hoodoos. Technical punchy climbs with epic views of Pulpit Rock.",
+    "partner_brewery": "Atrevida Beer Co"
+  },
+  {
+    "id": "cos-ute-black",
+    "name": "Ute Valley (Black & Blue Loops)",
+    "difficulty": "Black/Technical",
+    "soil_type": "Hardpack Clay & Technical Rock Drops",
+    "fun_index": 9,
+    "last_verified": "2026-03-15",
+    "description": "The heart of Ute. Technical rock features and short, punchy climbs that test your agility.",
+    "partner_brewery": "Red Leg Brewing"
+  },
+  {
+    "id": "cos-005",
+    "name": "Red Rock Canyon Loop",
+    "difficulty": "Green/Discovery",
+    "soil_type": "Red Sandstone & Gritty Dirt",
+    "fun_index": 8,
+    "last_verified": "2026-03-15",
+    "description": "Ride through history. Red rock spires and smooth, wide connectors.",
+    "partner_brewery": "Trails End Taproom"
+  },
+  {
+    "id": "cos-006",
+    "name": "Daniels Pass (Cheyenne Cañon)",
+    "difficulty": "Blue/Flow",
+    "soil_type": "Granite Screen & Forest Loam",
+    "fun_index": 9,
+    "last_verified": "2026-03-15",
+    "description": "Modern trail building at its finest. Incredible switchbacks and alpine scenery.",
+    "partner_brewery": "Bristol Brewing (Ivywild)"
+  },
+  {
+    "id": "cos-010",
+    "name": "Rampart Reservoir Loop",
+    "difficulty": "Blue/Flow",
+    "soil_type": "Ponderosa Hardpack & Granite Slabs",
+    "fun_index": 9,
+    "last_verified": "2026-03-15",
+    "description": "High-country bliss. 14 miles of singletrack circling the water at 9,000ft.",
+    "partner_brewery": "Paradox Beer Co"
+  }
 ]

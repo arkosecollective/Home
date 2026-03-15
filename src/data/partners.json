@@ -1,5 +1,83 @@
 [
-  { "name": "Manitou Brewing Co.", "type": "Brewery", "trail_pairing": ["rtp-01", "trail-01"], "is_bike_accessible": true },
-  { "name": "Cerberus Brewing", "type": "Brewery", "trail_pairing": ["trail-01"], "is_bike_accessible": true },
-  { "name": "The Broadmoor", "type": "Lodging", "trail_pairing": ["rtp-02"], "is_bike_accessible": true }
+  {
+    "name": "Buffalo Lodge Bicycle Resort",
+    "category": "Stay",
+    "type": "Bicycle Resort",
+    "description": "The base camp for adventure. Directly on the Midland Trail with group rides and bike storage.",
+    "trail_pairing": ["cos-005", "cos-006"],
+    "is_bike_accessible": true,
+    "url": "/buffalo-lodge"
+  },
+  {
+    "name": "The Broadmoor",
+    "category": "Stay",
+    "type": "Luxury Hotel",
+    "description": "Historic Five-Star resort at the foot of Cheyenne Cañon.",
+    "trail_pairing": ["cos-001", "cos-006"],
+    "is_bike_accessible": true,
+    "url": "https://www.broadmoor.com/"
+  },
+  {
+    "name": "Garden of the Gods Resort",
+    "category": "Stay",
+    "type": "Luxury Resort",
+    "description": "Panoramic views of the park and Pikes Peak. Exclusive wellness services.",
+    "trail_pairing": ["cos-rim-bluffs"],
+    "is_bike_accessible": true,
+    "url": "https://www.gardenofthegodsresort.com/"
+  },
+  {
+    "name": "Manitou Brewing Co.",
+    "category": "Eat",
+    "type": "Brewery & Kitchen",
+    "description": "Post-ride fuel in the heart of Manitou Springs. High-quality craft beers.",
+    "trail_pairing": ["rtp-1", "cos-001"],
+    "is_bike_accessible": true,
+    "url": "https://www.manitou-brewing.com/"
+  },
+  {
+    "name": "Cerberus Brewing",
+    "category": "Eat",
+    "type": "Brewery & Gastropub",
+    "description": "Gourmet food and award-winning beers with a massive dog-friendly patio.",
+    "trail_pairing": ["cos-004"],
+    "is_bike_accessible": true,
+    "url": "https://www.cerberusbrewingco.com/"
+  },
+  {
+    "name": "Trails End Taproom",
+    "category": "Eat",
+    "type": "Self-Serve Taproom",
+    "description": "Pay by the ounce and enjoy the local trail community vibe.",
+    "trail_pairing": ["cos-005"],
+    "is_bike_accessible": true,
+    "url": "https://www.trailsendtaproom.com/"
+  },
+  {
+    "name": "Garden of the Gods Park",
+    "category": "See",
+    "type": "National Landmark",
+    "description": "Iconic red sandstone formations and miles of paved and unpaved trails.",
+    "trail_pairing": ["cos-005"],
+    "is_bike_accessible": true,
+    "url": "https://gardenofgods.com/"
+  },
+  {
+    "name": "Pikes Peak Cog Railway",
+    "category": "See",
+    "type": "Historic Railway",
+    "description": "The highest cog railway in the world, taking you to the 14,115ft summit.",
+    "trail_pairing": ["rtp-1"],
+    "is_bike_accessible": true,
+    "url": "https://www.cograilway.com/"
+  },
+  {
+    "name": "Red Rock Canyon Open Space",
+    "category": "See",
+    "type": "Public Park",
+    "description": "A playground of sandstone canyons and ridge trails with city views.",
+    "trail_pairing": ["cos-005"],
+    "is_bike_accessible": true,
+    "url": "https://coloradosprings.gov/parks/page/red-rock-canyon-open-space"
+  }
 ]
