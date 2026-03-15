@@ -8,7 +8,7 @@ A high-performance, cinematic digital trailhead for the Pikes Peak region.
 ### Core Features
 - **Cinematic Minimalism:** Dark-mode first design inspired by Rocky Mountain bikes.
 - **Ring the Peak Hub:** Multi-page storytelling for the 63-mile epic loop.
-- **Adventure Filter:** Bentonville-style trail grid with local business pairings.
+- **Adventure Planner:** Bentonville-style trail grid with local business pairings.
 - **The Carless Afternoon:** Multi-modal trip planner for vehicle-free adventures.
 
 ### Technical Stack
