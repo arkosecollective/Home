@@ -1,0 +1,5 @@
+[
+  { "name": "Manitou Brewing Co.", "type": "Brewery", "trail_pairing": ["rtp-01", "trail-01"], "is_bike_accessible": true },
+  { "name": "Cerberus Brewing", "type": "Brewery", "trail_pairing": ["trail-01"], "is_bike_accessible": true },
+  { "name": "The Broadmoor", "type": "Lodging", "trail_pairing": ["rtp-02"], "is_bike_accessible": true }
+]

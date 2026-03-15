@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import trailsData from '../../data/trails.json';
+
+// Filter for only Ring the Peak segments
+const rtpSegments = trailsData.filter(trail => trail.rtp_segment);
+
+// Helper to color-code difficulty
+const getDifficultyColor = (difficulty: string) => {
+	switch(difficulty.toLowerCase()) {
+		case 'green': return 'bg-emerald-500 text-black';
+		case 'blue': return 'bg-blue-600 text-white';
+		case 'black': return 'bg-black text-white border border-stone-700';
+		default: return 'bg-stone-500 text-white';
+	}
+};
+---
+
+<Layout title="Ring the Peak | Segments">
+	<section class="pt-32 pb-16 px-8 bg-black min-h-screen">
+		<div class="max-w-7xl mx-auto">
+			<div class="mb-16">
+				<a href="/ring-the-peak/overview" class="text-arkose-red font-oswald uppercase tracking-widest text-sm mb-6 inline-flex items-center gap-2 hover:text-white transition-colors">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+					Back to Overview
+				</a>
+				<h1 class="text-5xl md:text-7xl font-oswald font-bold tracking-tighter uppercase mb-4">
+					The <span class="text-arkose-red">Segments</span>
+				</h1>
+				<p class="text-stone-400 text-lg max-w-2xl font-light">
+					A breakdown of the 63-mile epic. Plan your attack, check elevation profiles, and discover the bedrock of the Pikes Peak region.
+				</p>
+			</div>
+
+			<!-- Segments Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{rtpSegments.map((segment) => (
+					<div class="bg-stone-900/50 border border-stone-800 p-6 hover:bg-stone-900 transition-colors group">
+						<div class="flex justify-between items-start mb-6">
+							<span class={`font-oswald uppercase tracking-widest text-xs px-3 py-1 ${getDifficultyColor(segment.difficulty)}`}>
+								{segment.difficulty}
+							</span>
+							<span class="text-arkose-red font-oswald uppercase text-sm tracking-widest">
+								{segment.id}
+							</span>
+						</div>
+						
+						<h3 class="text-2xl font-oswald font-bold uppercase tracking-tight mb-2 group-hover:text-arkose-red transition-colors">
+							{segment.name}
+						</h3>
+						
+						<div class="space-y-3 mt-6 pt-6 border-t border-stone-800/50 text-sm font-inter text-stone-400">
+							<div class="flex justify-between">
+								<span>Type</span>
+								<span class="text-white">{segment.type}</span>
+							</div>
+							<div class="flex justify-between">
+								<span>Elevation Gain</span>
+								<span class="text-white">{segment.elevation_gain} ft</span>
+							</div>
+							<div class="flex justify-between">
+								<span>Connectivity Score</span>
+								<span class="text-white">{segment.connectivity_score}/10</span>
+							</div>
+						</div>
+						
+						{segment.photo_ops.length > 0 && (
+							<div class="mt-6 flex flex-wrap gap-2">
+								{segment.photo_ops.map(op => (
+									<span class="text-xs bg-black text-stone-500 border border-stone-800 px-2 py-1">
+										#{op.replace(/\s+/g, '')}
+									</span>
+								))}
+							</div>
+						)}
+					</div>
+				))}
+			</div>
+			
+			{rtpSegments.length === 0 && (
+				<div class="text-center py-24 border border-stone-800 bg-stone-900/30">
+					<p class="text-stone-500 font-oswald uppercase tracking-widest">No segments found in database.</p>
+				</div>
+			)}
+		</div>
+	</section>
+</Layout>

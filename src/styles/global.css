@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-arkose-red: #8b0000; /* Muted Sandstone/Crimson */
+  --color-stone-950: #0c0a09;
+  --color-stone-300: #d6d3d1;
+
+  --font-oswald: "Oswald", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-inter;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-oswald uppercase tracking-tight;
+  }
+}
+
+/* Custom Utilities for Cinematic Minimalism */
+.hero-video-container {
+  @apply relative w-full h-screen overflow-hidden;
+}
+
+.hero-overlay {
+  @apply absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center p-6;
+}
+
+.ghost-header {
+  @apply fixed top-0 left-0 w-full z-50 transition-all duration-300;
+}
+
+.ghost-header.scrolled {
+  @apply bg-black/90 backdrop-blur-md border-b border-stone-800;
+}

@@ -1,0 +1,86 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Arkose Collective</title>
+		<!-- Google Fonts: Oswald (Headings) & Inter (Body) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-black text-white selection:bg-arkose-red selection:text-white overflow-x-hidden">
+		<header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 px-8 flex justify-between items-center group">
+			<div class="logo font-oswald text-2xl font-bold tracking-tighter uppercase">
+				Arkose<span class="text-arkose-red">Collective</span>
+			</div>
+			
+			<nav class="hidden md:flex gap-10 font-oswald text-sm tracking-widest uppercase">
+				<a href="/" class="hover:text-arkose-red transition-colors">Home</a>
+				<a href="/ring-the-peak" class="hover:text-arkose-red transition-colors">Ring the Peak</a>
+				<a href="/trails" class="hover:text-arkose-red transition-colors">Trails</a>
+				<a href="/blog" class="hover:text-arkose-red transition-colors">Blog</a>
+			</nav>
+
+			<div class="menu-trigger md:hidden">
+				<button class="text-white">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+				</button>
+			</div>
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer class="bg-stone-950 border-t border-stone-900 py-12 px-8">
+			<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+				<div>
+					<h3 class="text-lg mb-4 text-stone-300">Arkose Collective</h3>
+					<p class="text-sm text-stone-500">Building the foundational infrastructure for the Pikes Peak outdoor economy.</p>
+				</div>
+				<div>
+					<h3 class="text-lg mb-4 text-stone-300">Quick Links</h3>
+					<ul class="text-sm text-stone-500 space-y-2">
+						<li><a href="/ring-the-peak" class="hover:text-white transition-colors">Ring the Peak Overview</a></li>
+						<li><a href="/trails" class="hover:text-white transition-colors">Adventure Filter</a></li>
+						<li><a href="/blog" class="hover:text-white transition-colors">Development News</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3 class="text-lg mb-4 text-stone-300">Connect</h3>
+					<p class="text-sm text-stone-500">Local business pairings and trail advocacy for the bedrock of cycling growth.</p>
+				</div>
+			</div>
+			<div class="text-center mt-12 pt-12 border-t border-stone-900 text-stone-700 text-xs">
+				&copy; 2026 Arkose Collective LLC. All rights reserved.
+			</div>
+		</footer>
+
+		<script>
+			// Ghost Header Scroll Logic
+			const header = document.getElementById('main-header');
+			window.addEventListener('scroll', () => {
+				if (window.scrollY > 50) {
+					header?.classList.add('bg-black/90', 'backdrop-blur-md', 'border-b', 'border-stone-800', 'py-4');
+					header?.classList.remove('py-6');
+				} else {
+					header?.classList.remove('bg-black/90', 'backdrop-blur-md', 'border-b', 'border-stone-800', 'py-4');
+					header?.classList.add('py-6');
+				}
+			});
+		</script>
+	</body>
+</html>

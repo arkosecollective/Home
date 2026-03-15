@@ -1,0 +1,47 @@
+---
+import Layout from './Layout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={`${frontmatter.title} | Arkose News`}>
+	<article class="pt-32 pb-24 px-8 bg-black min-h-screen">
+		<div class="max-w-3xl mx-auto">
+			<a href="/blog" class="text-arkose-red font-oswald uppercase tracking-widest text-sm mb-8 inline-flex items-center gap-2 hover:text-white transition-colors">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+				Back to News
+			</a>
+			
+			<header class="mb-12 border-b border-stone-800 pb-8">
+				<div class="flex gap-4 items-center mb-4 text-stone-500 font-oswald text-sm uppercase tracking-widest">
+					<span>{frontmatter.date}</span>
+					<span>•</span>
+					<span class="text-arkose-red">{frontmatter.category}</span>
+				</div>
+				<h1 class="text-5xl md:text-6xl font-oswald font-bold tracking-tighter uppercase mb-6 text-white">
+					{frontmatter.title}
+				</h1>
+				<p class="text-xl text-stone-400 font-light leading-relaxed">
+					{frontmatter.description}
+				</p>
+			</header>
+
+			<div class="prose prose-invert prose-stone max-w-none font-inter text-stone-300 leading-loose
+				prose-headings:font-oswald prose-headings:uppercase prose-headings:tracking-tight prose-headings:text-white
+				prose-a:text-arkose-red hover:prose-a:text-red-400
+				prose-strong:text-white
+				prose-blockquote:border-l-arkose-red prose-blockquote:bg-stone-900/50 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:font-light prose-blockquote:not-italic">
+				<slot />
+			</div>
+		</div>
+	</article>
+</Layout>
+
+<style is:global>
+	/* Basic styling for markdown content since we don't have @tailwindcss/typography installed */
+	.prose h2 { font-size: 2.25rem; margin-top: 3rem; margin-bottom: 1.5rem; }
+	.prose h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+	.prose p { margin-bottom: 1.5rem; }
+	.prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+	.prose li { margin-bottom: 0.5rem; }
+</style>

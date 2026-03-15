@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Ring the Peak | Overview">
+	<!-- Parallax Hero -->
+	<section class="relative h-[80vh] flex items-center justify-center bg-fixed bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop');">
+		<div class="absolute inset-0 bg-black/60"></div>
+		<div class="relative z-10 text-center px-4 mt-20">
+			<span class="text-arkose-red font-oswald uppercase tracking-[0.3em] text-sm mb-4 block">The 63-Mile Epic</span>
+			<h1 class="text-6xl md:text-8xl font-oswald font-bold tracking-tighter uppercase mb-6 drop-shadow-2xl">
+				Ring the <span class="text-transparent border-text">Peak</span>
+			</h1>
+			<p class="text-xl md:text-2xl text-stone-300 font-light tracking-wide max-w-2xl mx-auto">
+				Circumnavigating America's Mountain. A testament to community, endurance, and the bedrock of Pikes Peak.
+			</p>
+		</div>
+	</section>
+	
+	<!-- Storytelling Content -->
+	<section class="py-24 px-8 bg-black relative z-20">
+		<div class="max-w-4xl mx-auto">
+			<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+				
+				<!-- Sidebar sticky stats -->
+				<div class="md:col-span-4 space-y-8 sticky top-32 self-start hidden md:block">
+					<div class="border-l-2 border-arkose-red pl-6 py-2">
+						<h4 class="font-oswald text-stone-500 uppercase tracking-widest text-xs mb-1">Total Distance</h4>
+						<p class="text-3xl font-bold tracking-tighter text-white">63 Miles</p>
+					</div>
+					<div class="border-l-2 border-stone-800 pl-6 py-2">
+						<h4 class="font-oswald text-stone-500 uppercase tracking-widest text-xs mb-1">Total Segments</h4>
+						<p class="text-3xl font-bold tracking-tighter text-white">10</p>
+					</div>
+					<div class="border-l-2 border-stone-800 pl-6 py-2">
+						<h4 class="font-oswald text-stone-500 uppercase tracking-widest text-xs mb-1">Status</h4>
+						<p class="text-3xl font-bold tracking-tighter text-white">90% Complete</p>
+					</div>
+					<a href="/ring-the-peak/segments" class="inline-block mt-8 text-sm font-oswald uppercase tracking-widest text-arkose-red hover:text-white transition-colors border border-arkose-red hover:bg-arkose-red px-6 py-3 w-full text-center">
+						View Segments
+					</a>
+				</div>
+
+				<!-- Main Narrative -->
+				<div class="md:col-span-8 text-lg text-stone-300 leading-relaxed font-inter space-y-10">
+					<p class="text-2xl text-white font-light leading-snug">
+						For decades, it was just an idea whispered at trailheads and over post-ride beers. Today, Ring the Peak is the crown jewel of the Pikes Peak outdoor economy.
+					</p>
+					
+					<h3 class="text-3xl font-oswald font-bold tracking-tighter text-white pt-8">The Vision</h3>
+					<p>
+						Ring the Peak is more than a trail; it's a testament to the resilience and ambition of the Pikes Peak outdoor community. By connecting diverse ecosystems, local businesses, and world-class singletrack, this loop serves as the foundational infrastructure for regional prosperity.
+					</p>
+					
+					<div class="aspect-video bg-stone-900 border border-stone-800 my-12 relative overflow-hidden group">
+						<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541781258631-9877b0bd1598?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-1000 opacity-70"></div>
+						<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+							<span class="font-oswald uppercase tracking-widest text-white/50 border border-white/30 px-6 py-2 backdrop-blur-sm">Palmer Reservoir</span>
+						</div>
+					</div>
+
+					<h3 class="text-3xl font-oswald font-bold tracking-tighter text-white pt-8">Closing the Gap</h3>
+					<p>
+						The final southwestern flank remains the ultimate frontier. Through strategic partnerships, Arkose Collective and local advocates are working to secure the bedrock alignments that will finalize the 63-mile circumnavigation, turning the loop into a global destination.
+					</p>
+
+					<!-- Mobile sticky stats alternative -->
+					<div class="mt-16 block md:hidden space-y-6 border-t border-stone-800 pt-10">
+						<div class="flex justify-between items-center border-b border-stone-800 pb-4">
+							<span class="font-oswald text-stone-500 uppercase tracking-widest text-xs">Total Distance</span>
+							<span class="text-xl font-bold text-white">63 Miles</span>
+						</div>
+						<a href="/ring-the-peak/segments" class="block w-full text-center text-sm font-oswald uppercase tracking-widest text-white bg-arkose-red px-6 py-4">
+							View All Segments
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<style>
+		.border-text {
+			-webkit-text-stroke: 2px #ffffff;
+		}
+	</style>
+</Layout>

@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import trailsData from '../data/trails.json';
+import partnersData from '../data/partners.json';
+
+// Helper to find partners for a specific trail
+const getPartnersForTrail = (trailId: string) => {
+	return partnersData.filter(partner => partner.trail_pairing.includes(trailId));
+};
+
+const getDifficultyColor = (difficulty: string) => {
+	switch(difficulty.toLowerCase()) {
+		case 'green': return 'bg-emerald-500 text-black';
+		case 'blue': return 'bg-blue-600 text-white';
+		case 'black': return 'bg-black text-white border border-stone-700';
+		default: return 'bg-stone-500 text-white';
+	}
+};
+---
+
+<Layout title="Trail Filter | Arkose">
+	<section class="pt-32 pb-16 px-8 bg-black min-h-screen">
+		<div class="max-w-7xl mx-auto">
+			<div class="mb-12 border-b border-stone-800 pb-10">
+				<h1 class="text-5xl md:text-7xl font-oswald font-bold tracking-tighter uppercase mb-4">
+					Adventure <span class="text-arkose-red">Filter</span>
+				</h1>
+				<p class="text-stone-400 text-lg max-w-2xl font-light">
+					Find your next ride. Filter by difficulty, no-car accessibility, and discover local business pairings right at the trailhead.
+				</p>
+			</div>
+
+			<!-- Quick Filters (Visual Only for Prototype) -->
+			<div class="flex flex-wrap gap-4 mb-12">
+				<button class="bg-white text-black font-oswald uppercase tracking-widest text-xs px-6 py-3 hover:bg-arkose-red hover:text-white transition-colors">All Trails</button>
+				<button class="border border-stone-700 text-white font-oswald uppercase tracking-widest text-xs px-6 py-3 hover:border-white transition-colors">Green / Blue / Black</button>
+				<button class="border border-stone-700 text-white font-oswald uppercase tracking-widest text-xs px-6 py-3 hover:border-white transition-colors">No-Car Accessible</button>
+				<button class="border border-stone-700 text-white font-oswald uppercase tracking-widest text-xs px-6 py-3 hover:border-white transition-colors">High Connectivity</button>
+			</div>
+
+			<!-- Master Trail Grid -->
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+				{trailsData.map((trail) => {
+					const partners = getPartnersForTrail(trail.id);
+					return (
+						<div class="bg-stone-950 border border-stone-800 flex flex-col md:flex-row overflow-hidden group">
+							<!-- Image Placeholder -->
+							<div class="md:w-2/5 aspect-video md:aspect-auto bg-stone-900 relative">
+								<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576858597341-c1161245037d?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 opacity-50"></div>
+								<div class="absolute top-4 left-4 z-10 flex gap-2">
+									<span class={`font-oswald uppercase tracking-widest text-[10px] px-2 py-1 ${getDifficultyColor(trail.difficulty)}`}>
+										{trail.difficulty}
+									</span>
+									{trail.rtp_segment && (
+										<span class="font-oswald uppercase tracking-widest text-[10px] px-2 py-1 bg-arkose-red text-white">
+											RTP
+										</span>
+									)}
+								</div>
+							</div>
+							
+							<!-- Trail Info -->
+							<div class="p-6 md:w-3/5 flex flex-col justify-between">
+								<div>
+									<h3 class="text-2xl font-oswald font-bold uppercase tracking-tight mb-2">
+										{trail.name}
+									</h3>
+									<div class="flex gap-4 text-xs font-inter text-stone-500 mb-6">
+										<span>{trail.type}</span>
+										<span>•</span>
+										<span>{trail.elevation_gain}ft Gain</span>
+									</div>
+								</div>
+								
+								<!-- Ecosystem Pairings -->
+								<div class="border-t border-stone-800 pt-4 mt-auto">
+									<p class="font-oswald text-[10px] uppercase tracking-widest text-stone-500 mb-2">Local Pairings</p>
+									{partners.length > 0 ? (
+										<div class="flex flex-wrap gap-2">
+											{partners.map(p => (
+												<span class="inline-flex items-center gap-1 text-xs text-white bg-stone-900 border border-stone-700 px-2 py-1">
+													<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-arkose-red"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+													{p.name}
+												</span>
+											))}
+										</div>
+									) : (
+										<span class="text-xs text-stone-600 italic">No pairings registered yet.</span>
+									)}
+								</div>
+							</div>
+						</div>
+					);
+				})}
+			</div>
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,6 @@
+[
+  { "id": "rtp-01", "name": "Manitou to Barr Trail", "difficulty": "Black", "type": "Multi-use", "elevation_gain": 2200, "rtp_segment": true, "connectivity_score": 9, "photo_ops": ["Incline View", "Barr Camp"] },
+  { "id": "rtp-02", "name": "Section 16 to Bear Creek", "difficulty": "Blue", "type": "Multi-use", "elevation_gain": 1200, "rtp_segment": true, "connectivity_score": 8, "photo_ops": ["Palmer Reservoir", "City View"] },
+  { "id": "trail-01", "name": "Red Rock Canyon Loop", "difficulty": "Green", "type": "Multi-use", "elevation_gain": 450, "rtp_segment": false, "connectivity_score": 10, "photo_ops": ["Sandstone Canyons"] },
+  { "id": "trail-02", "name": "Ute Valley Epic", "difficulty": "Blue", "type": "MTB Primary", "elevation_gain": 600, "rtp_segment": false, "connectivity_score": 7, "photo_ops": ["Rock Tech Sections"] }
+]

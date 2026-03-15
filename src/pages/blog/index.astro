@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Fetch all markdown posts
+const posts = await Astro.glob('./*.md');
+// Sort by date descending (simple sort for prototype)
+posts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+---
+
+<Layout title="Development News | Arkose Collective">
+	<section class="pt-32 pb-16 px-8 bg-black min-h-screen">
+		<div class="max-w-4xl mx-auto">
+			<div class="mb-16 border-b border-stone-800 pb-10">
+				<h1 class="text-5xl md:text-7xl font-oswald font-bold tracking-tighter uppercase mb-4">
+					Development <span class="text-arkose-red">News</span>
+				</h1>
+				<p class="text-stone-400 text-lg font-light">
+					Updates from the dirt. Trail expansions, strategic partnerships, and the latest on the Pikes Peak outdoor economy.
+				</p>
+			</div>
+
+			<div class="space-y-12">
+				{posts.map(post => (
+					<article class="group">
+						<div class="flex gap-4 items-center mb-3 text-stone-500 font-oswald text-xs uppercase tracking-widest">
+							<span>{post.frontmatter.date}</span>
+							<span class="w-1 h-1 bg-stone-700 rounded-full"></span>
+							<span class="text-arkose-red">{post.frontmatter.category}</span>
+						</div>
+						<a href={post.url}>
+							<h2 class="text-3xl font-oswald font-bold uppercase tracking-tight mb-4 group-hover:text-arkose-red transition-colors">
+								{post.frontmatter.title}
+							</h2>
+						</a>
+						<p class="text-stone-400 font-inter leading-relaxed mb-6">
+							{post.frontmatter.description}
+						</p>
+						<a href={post.url} class="inline-flex items-center gap-2 text-sm font-oswald uppercase tracking-widest text-white hover:text-arkose-red transition-colors">
+							Read Full Update 
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+						</a>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,93 @@
+---
+---
+
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+	<!-- Background Video Placeholder (YouTube iframe loop) -->
+	<div class="absolute inset-0 pointer-events-none opacity-40">
+		<iframe 
+			width="100%" 
+			height="100%" 
+			src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ&modestbranding=1&showinfo=0&rel=0" 
+			frameborder="0" 
+			allow="autoplay; encrypted-media" 
+			class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full scale-125">
+		</iframe>
+	</div>
+
+	<!-- Content Overlay -->
+	<div class="relative z-10 text-center px-4 max-w-4xl">
+		<h1 class="text-6xl md:text-8xl font-oswald font-bold leading-tight mb-4 tracking-tighter">
+			Pikes Peak <br/> 
+			<span class="text-arkose-red">Adventure Portal</span>
+		</h1>
+		<p class="text-xl md:text-2xl text-stone-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+			The foundational infrastructure for the Pikes Peak outdoor economy. Connecting trails to community.
+		</p>
+		
+		<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+			<button class="bg-white text-black font-oswald uppercase tracking-widest px-10 py-4 hover:bg-arkose-red hover:text-white transition-all duration-300">
+				Explore Trails
+			</button>
+			<button id="planner-btn" class="border border-white/30 backdrop-blur-sm text-white font-oswald uppercase tracking-widest px-10 py-4 hover:bg-white hover:text-black transition-all duration-300">
+				The Carless Afternoon
+			</button>
+		</div>
+	</div>
+
+	<!-- Bottom Scroll Indicator -->
+	<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+	</div>
+</section>
+
+<!-- Simple Trip Planner Modal -->
+<div id="planner-modal" class="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-6 opacity-0 pointer-events-none transition-opacity duration-500 backdrop-blur-xl">
+	<div class="max-w-xl w-full">
+		<div class="flex justify-between items-center mb-10">
+			<h2 class="text-4xl font-oswald font-bold tracking-tighter uppercase">The <span class="text-arkose-red">Carless</span> Afternoon</h2>
+			<button id="close-modal" class="text-stone-500 hover:text-white transition-colors">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+			</button>
+		</div>
+		
+		<p class="text-stone-400 mb-8 text-lg">Leave the keys behind. Plan your multi-modal adventure from trail to brewery without a vehicle.</p>
+		
+		<form class="space-y-6">
+			<div>
+				<label class="block font-oswald uppercase tracking-wider text-xs text-stone-600 mb-2">Select Your Basecamp</label>
+				<select class="w-full bg-stone-900 border-none text-white py-4 px-4 font-inter">
+					<option>Manitou Springs</option>
+					<option>Old Colorado City</option>
+					<option>Downtown Colorado Springs</option>
+				</select>
+			</div>
+			
+			<div>
+				<label class="block font-oswald uppercase tracking-wider text-xs text-stone-600 mb-2">Adventure Intensity</label>
+				<div class="grid grid-cols-3 gap-2">
+					<button type="button" class="bg-stone-900 py-3 text-xs uppercase tracking-tighter border border-stone-800 hover:border-arkose-red">Chill</button>
+					<button type="button" class="bg-stone-900 py-3 text-xs uppercase tracking-tighter border border-stone-800 hover:border-arkose-red">Epic</button>
+					<button type="button" class="bg-stone-900 py-3 text-xs uppercase tracking-tighter border border-stone-800 hover:border-arkose-red">Bedrock</button>
+				</div>
+			</div>
+
+			<button type="submit" class="w-full bg-arkose-red text-white font-oswald uppercase tracking-widest py-5 mt-6 hover:bg-red-800 transition-colors">
+				Generate Trip
+			</button>
+		</form>
+	</div>
+</div>
+
+<script>
+	const plannerBtn = document.getElementById('planner-btn');
+	const modal = document.getElementById('planner-modal');
+	const closeModal = document.getElementById('close-modal');
+
+	plannerBtn?.addEventListener('click', () => {
+		modal?.classList.remove('opacity-0', 'pointer-events-none');
+	});
+
+	closeModal?.addEventListener('click', () => {
+		modal?.classList.add('opacity-0', 'pointer-events-none');
+	});
+</script>

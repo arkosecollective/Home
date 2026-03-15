@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HomeHero from '../components/HomeHero.astro';
+---
+
+<Layout title="Adventure Portal">
+	<HomeHero />
+	
+	<!-- Preview of the Bedrock: Progressive Disclosure Section -->
+	<section class="py-24 px-8 bg-black">
+		<div class="max-w-7xl mx-auto">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+				<div>
+					<h2 class="text-5xl font-bold mb-6 tracking-tighter">The Foundational <span class="text-arkose-red">Bedrock</span></h2>
+					<p class="text-stone-400 text-lg leading-relaxed mb-8">
+						Arkose Collective isn't just about trails; it's about the ecosystem that sustains them. We bridge the gap between high-impact cycling events and regional prosperity.
+					</p>
+					<ul class="space-y-4 font-oswald text-stone-200 tracking-wide uppercase text-sm">
+						<li class="flex items-center gap-3">
+							<span class="w-2 h-2 bg-arkose-red rounded-full"></span>
+							Event Professionalization
+						</li>
+						<li class="flex items-center gap-3">
+							<span class="w-2 h-2 bg-arkose-red rounded-full"></span>
+							Trail Development News
+						</li>
+						<li class="flex items-center gap-3">
+							<span class="w-2 h-2 bg-arkose-red rounded-full"></span>
+							Local Business Ecosystems
+						</li>
+					</ul>
+				</div>
+				<div class="relative aspect-video bg-stone-900 border border-stone-800 overflow-hidden group">
+					<!-- Image Placeholder -->
+					<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544191713-3942072e948c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60"></div>
+					<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+					<div class="absolute bottom-6 left-6">
+						<span class="text-xs font-oswald uppercase tracking-widest text-arkose-red">Blodgett 2026</span>
+						<p class="text-xl font-oswald uppercase font-bold tracking-tighter">Expanding the Loop</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
