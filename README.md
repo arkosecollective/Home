@@ -1,4 +1,4 @@
-# Arkose Adventure Portal
+# ExploreCOS Adventure Portal
 
 **Arkose Collective** builds the foundational infrastructure for the Pikes Peak outdoor economy. By uniting industry leaders with community culture, we transform passion into professionalized, high-impact events that serve as the bedrock for cycling’s growth and regional prosperity.
 
