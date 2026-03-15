@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Trail Status | ExploreCOS">
+	<section class="pt-32 pb-24 px-8 bg-black min-h-screen">
+		<div class="max-w-7xl mx-auto">
+			<div class="mb-16 border-b border-stone-800 pb-10">
+				<a href="/ring-the-peak/overview" class="text-arkose-red font-oswald uppercase tracking-widest text-sm mb-6 inline-flex items-center gap-2 hover:text-white transition-colors">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+					Back to Overview
+				</a>
+				<h1 class="text-5xl md:text-7xl font-oswald font-bold tracking-tighter uppercase mb-4">
+					Live <span class="text-arkose-red">Status</span>
+				</h1>
+				<p class="text-stone-400 text-lg max-w-2xl font-light">
+					The bedrock of trail safety. Real-time updates from the dirt, weather conditions, and active trail alerts for the Pikes Peak region.
+				</p>
+			</div>
+
+			<!-- Dashboard Logic -->
+			<div id="status-dashboard" class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+				<!-- Weather Widget -->
+				<div class="lg:col-span-4 bg-stone-900 border border-stone-800 p-8 flex flex-col justify-center items-center text-center">
+					<h3 class="font-oswald uppercase tracking-widest text-xs text-stone-500 mb-6">Current Conditions</h3>
+					<div id="weather-temp" class="text-7xl font-bold tracking-tighter mb-2">--°F</div>
+					<div id="weather-cond" class="text-xl text-arkose-red font-oswald uppercase tracking-widest">Loading...</div>
+					<div class="mt-8 pt-8 border-t border-stone-800 w-full">
+						<p class="text-xs text-stone-600 uppercase tracking-widest">Last Update</p>
+						<p id="last-update" class="text-sm text-stone-400">Just now</p>
+					</div>
+				</div>
+
+				<!-- Trail Alert Grid -->
+				<div class="lg:col-span-8">
+					<div id="trail-grid" class="space-y-4">
+						<!-- JavaScript will inject trails here -->
+						<div class="animate-pulse space-y-4">
+							<div class="h-20 bg-stone-900 border border-stone-800"></div>
+							<div class="h-20 bg-stone-900 border border-stone-800"></div>
+							<div class="h-20 bg-stone-900 border border-stone-800"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		async function fetchStatus() {
+			try {
+				const response = await fetch('http://localhost:3001/api/status');
+				const data = await response.json();
+				
+				// Update Weather
+				document.getElementById('weather-temp')!.innerText = `${data.weather.temp}°F`;
+				document.getElementById('weather-cond')!.innerText = data.weather.condition;
+				document.getElementById('last-update')!.innerText = new Date(data.updated_at).toLocaleTimeString();
+
+				// Update Trails
+				const grid = document.getElementById('trail-grid')!;
+				grid.innerHTML = data.trails.map((trail: any) => `
+					<div class="bg-stone-900/50 border border-stone-800 p-6 flex flex-col md:flex-row justify-between items-center group hover:bg-stone-900 transition-colors">
+						<div class="flex flex-col md:flex-row gap-6 items-center">
+							<div class="w-2 h-2 rounded-full ${trail.status === 'Clear' ? 'bg-emerald-500' : trail.status === 'Caution' ? 'bg-amber-500' : 'bg-red-500'} shadow-[0_0_10px_rgba(0,0,0,0.5)]"></div>
+							<div>
+								<h4 class="font-oswald uppercase font-bold text-lg group-hover:text-arkose-red transition-colors">${trail.name}</h4>
+								<p class="text-xs text-stone-500 uppercase tracking-widest">${trail.condition}</p>
+							</div>
+						</div>
+						<div class="mt-4 md:mt-0 text-center md:text-right">
+							${trail.alert ? `<span class="text-xs text-amber-500 font-inter italic">"${trail.alert}"</span>` : '<span class="text-xs text-stone-600 uppercase tracking-widest">All Clear</span>'}
+						</div>
+					</div>
+				`).join('');
+
+			} catch (err) {
+				console.error('Failed to fetch trail status:', err);
+			}
+		}
+
+		// Initial Fetch
+		fetchStatus();
+		// Poll every 60 seconds
+		setInterval(fetchStatus, 60000);
+	</script>
+</Layout>

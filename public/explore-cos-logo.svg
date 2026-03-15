@@ -1,0 +1,13 @@
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Rect for visibility during design -->
+  <rect width="400" height="100" fill="black" />
+  
+  <!-- "Explore" Text (Simulated Oswald Bold) -->
+  <text x="20" y="70" font-family="Oswald, sans-serif" font-weight="700" font-size="64" fill="white" letter-spacing="-2">EXPLORE</text>
+  
+  <!-- "COS" Text (Arkose Red) -->
+  <text x="255" y="70" font-family="Oswald, sans-serif" font-weight="700" font-size="64" fill="#8b0000" letter-spacing="-2">COS</text>
+  
+  <!-- Subtle Bedrock Underline -->
+  <rect x="20" y="80" width="360" height="4" fill="#8b0000" opacity="0.4" />
+</svg>
